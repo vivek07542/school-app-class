@@ -3,7 +3,7 @@ import StudentList from "./StudentList/StudentList"
 import {connect} from "react-redux";
 import * as formAction from "../../Store/Redux/reducer"
 import * as markAction from "../../Store/Redux/MarkReducer";
-
+import "./StudentSummary.css";
 class StudentSummary extends Component {
     render() {
         let student = (
@@ -29,7 +29,7 @@ class StudentSummary extends Component {
             })
         )
         return (
-            <div>
+            <div className="StudentSummary">
                  <h1>Student Summary </h1>
                  <table className="table table-striped">
                  <thead>
