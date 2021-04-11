@@ -4,10 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {Provider} from "react-redux";
+import {createStore,applyMiddleware,compose} from "redux";
+import rootReducer from "./Store/Redux/index";
+
+import {watch} from "./Store/Saga/index";
+
+import createSagaMiddleware from "redux-saga";
+
+const sagaMiddleware = createSagaMiddleware();
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(rootReducer,composeEnhancers(applyMiddleware(sagaMiddleware)));
+
+sagaMiddleware.run(watch);
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store = {store}>
     <App />
-  </React.StrictMode>,
+   </Provider>
+  ,
   document.getElementById('root')
 );
 

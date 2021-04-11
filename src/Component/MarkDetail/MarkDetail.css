@@ -1,0 +1,22 @@
+.MarkContainer{
+  width:100vw;
+  height:150vw;
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top:0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.MarkContent{
+  width:500px;  
+  min-height:300px;
+  height:auto;
+  background-color: white;
+  border-radius: 4px;
+  padding:20px;
+  text-align: center;  
+  position: relative;
+  padding-bottom:60px;
+}
